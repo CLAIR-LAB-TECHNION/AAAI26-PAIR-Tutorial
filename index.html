@@ -1,10 +1,212 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Website</title>
-  </head>
-  <body>
-    <h1>Hello!</h1>
-    <p>This is my first website on GitHub Pages.</p>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AAAI-26 Tutorial: Plan, Activity and Intent Recognition (PAIR)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AAAI-26 tutorial on Plan, Activity and Intent Recognition (PAIR)" />
+  <style>
+    :root {
+      --accent: #0b7285;
+      --accent-light: #e3fafc;
+      --bg: #f8f9fa;
+      --text: #212529;
+      --muted: #6c757d;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #dee2e6;
+      padding: 1.5rem 1.5rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+    header p {
+      margin: 0.2rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    main {
+      max-width: 960px;
+      margin: 1.5rem auto 3rem;
+      padding: 0 1rem;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.8rem 0 0;
+    }
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid #ced4da;
+      background: white;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .hero {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.5rem 1.5rem 1.25rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e9ecef;
+      margin-bottom: 1.8rem;
+    }
+    .hero h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    .hero p {
+      margin-top: 0.5rem;
+    }
+    .meta-grid {
+      display: grid;
+      gap: 0.75rem 2rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .meta-label {
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--accent-light);
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
+    }
+    .two-column {
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media (min-width: 800px) {
+      .meta-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .two-column {
+        grid-template-columns: 2fr 1.5fr;
+      }
+    }
+    ul, ol {
+      padding-left: 1.15rem;
+      margin-top: 0.2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.1rem 1.25rem;
+      border: 1px solid #e9ecef;
+    }
+    .presenter {
+      margin-bottom: 1rem;
+    }
+    .presenter:last-child {
+      margin-bottom: 0;
+    }
+    .presenter-name {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .presenter-affil {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .presenter-email a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .presenter-email a:hover {
+      text-decoration: underline;
+    }
+    .tagline {
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+    .pill {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      font-weight: 500;
+      margin: 0.1rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 1.5rem 1rem 2rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Plan, Activity and Intent Recognition (PAIR)</h1>
+    <p>AAAI-26 Tutorial • Tuesday, January 20 • 8:30am–12:30pm</p>
+    <p>Location: Singapore EXPO Convention &amp; Exhibition Centre</p>
+    <div class="badge-row">
+      <span class="badge">AAAI-26</span>
+      <span class="badge">Half-day Tutorial</span>
+      <span class="badge">8:30am – 12:30pm</span>
+      <span class="badge">January 20, 2026</span>
+      <span class="badge">Singapore EXPO</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>About the Tutorial</h2>
+      <p>
+        Despite rapid progress in machine learning, <strong>real-time, online inference
+        of agents’ intentions</strong> remains one of the enduring grand challenges in AI.
+        Plan, activity, intent, and goal recognition focus on inferring what
+        software agents, robots, or humans are trying to achieve from observations
+        of their behavior and interactions.
+      </p>
+      <p>
+        This tutorial targets AI students and researchers who want to understand
+        and apply recognition techniques in their own work, and who are looking
+        for new research directions grounded in this rich, cross-cutting area
+        of AI.
+      </p>
+
+      <div class="meta-grid">
+        <div>
+          <div class="meta-label">Goal</div>
+          <div>
+            Provide a unified, up-to-date introduction to plan, activity, intent,
+            and goal recognit
